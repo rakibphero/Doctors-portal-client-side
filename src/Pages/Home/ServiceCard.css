@@ -1,0 +1,24 @@
+.service-section{
+    width: 497px;
+    height: 347px;
+    top: 1928px;
+    left: 777px;
+}
+.treatment{
+    width: 458px;
+    height: 576px;
+    top: 1813px;
+    left: 217px;
+    Radius:8px;
+}
+.service-title{
+    font-family: Open Sans;
+    color: #3A4256;
+}
+.service-text{
+    font-family: Open Sans;
+    font-weight: 400;
+    size: 16px;
+    line-height: 21.79px;
+    color: #000000;
+}
