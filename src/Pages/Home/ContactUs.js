@@ -1,22 +1,21 @@
 import React from "react";
 import contact from '../../assets/images/appointment.png';
+import PrimaryButton from "../Shared/PrimaryButton";
 
 const ContactUs = () => {
   return (
     <div style={{
         background:`url(${contact})`
-    }}>
-        <div className="text-center my-4">
-            <h4 className="text-primary text-xl font-bold">Contact Us</h4>
-            <h2 className="text-3xl text-white">Stay connected with us</h2>
+    }} className='bg-primary px-10 py-14' >
+        <div className="text-center mb-14 text-white">
+            <p className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-accent to-secondary">Contact Us</p>
+            <h1 className="text-4xl">Stay connected with us</h1>
         </div>
-        <div>
-        <form className="text-center">
-        <input type="text" name="email" placeholder="Email Address" class="input input-bordered input-info w-full max-w-xs my-4" /><br />
-        <input type="text" name="text" placeholder="Subject" class="input input-bordered input-info w-full max-w-xs" /><br />
-        <input type="text" name="text" placeholder="Your Message" class="input input-bordered input-info w-full max-w-xs my-4 py-16" /><br />
-        <button className="btn btn-primary px-6 my-2">Submit</button>
-        </form>
+        <div className="grid grid-cols-1 justify-items-center gap-5">
+        <input type="text" placeholder="Email Address" className="input w-full max-w-md" />
+        <input type="text" placeholder="Subject" className="input w-full max-w-md" />
+        <textarea className="textarea w-full max-w-md" placeholder="Your message" rows={6}></textarea>
+         <PrimaryButton>Submit</PrimaryButton> 
     </div>
     </div>
   );
