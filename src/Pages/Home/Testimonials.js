@@ -10,23 +10,23 @@ const Testimonials = () => {
     const reviews = [
         {
             _id:1,
-            name: 'Nelson Mendela',
+            name: 'Nelson Mandola',
             review:'good work',
             location:'Canada',
             img: people1,
         },
         {
             _id:2,
-            name: 'Nelson Mendela',
-            review:'good work',
-            location:'Canada',
+            name: 'James Robert ',
+            review:'beautiful',
+            location:'USA',
             img: people2,
         },
         {
             _id:3,
-            name: 'Nelson Mendela',
-            review:'good work',
-            location:'Canada',
+            name: 'Anderson',
+            review:'awesome',
+            location:'UK',
             img: people3,
         },
     ];

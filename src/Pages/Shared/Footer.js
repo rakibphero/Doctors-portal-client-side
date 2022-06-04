@@ -12,27 +12,27 @@ const Footer = () => {
       <div className="footer">
         <div>
           <span className="footer-title">Services</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <a href="https://youtube.com">Branding</a>
+          <a href="https://youtube.com">Design</a>
+          <a href="https://youtube.com">Marketing</a>
+          <a href="https://youtube.com">Advertisement</a>
         </div>
         <div>
           <span className="footer-title">Company</span>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <a href="https://youtube.com">About us</a>
+          <a href="https://youtube.com">Contact</a>
+          <a href="https://youtube.com">Jobs</a>
+          <a href="https://youtube.com">Press kit</a>
         </div>
         <div>
           <span className="footer-title">Legal</span>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+          <a href="https://youtube.com">Terms of use</a>
+          <a href="https://youtube.com">Privacy policy</a>
+          <a href="https://youtube.com">Cookie policy</a>
         </div>
       </div>
-      <div className="text-center my-16">
-        <p>Copyright © 2022 - All right reserved by ACME Industries Ltd</p>
+      <div className="text-center my-4 font-bold">
+        <p>Copyright © 2022 - All right reserved.</p>
       </div>
     </footer>
   );

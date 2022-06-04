@@ -6,7 +6,7 @@ const ServiceCard = () => {
   return (
     <div className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row ">
-        <img src = {treatment} className="treatment max-w-sm rounded-lg shadow-2xl" />
+        <img src = {treatment} className="treatment max-w-sm rounded-lg shadow-2xl" alt="" />
         <div className="lg:mx-12 service-section">
           <h1 className="text-5xl font-bold service-title">Exceptional Dental <br />Care,on Your Terms</h1>
           <p className="py-6 service-text">

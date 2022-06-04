@@ -53,7 +53,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to='/' element={<Home></Home>} className= "btn btn-ghost normal-case text-xl px-16" ><img className="rounded-full mx-2" src={doctorsLogoImg} width='30px'alt="" /> Doctors Portal</Link>
+        <Link to='/' element={<Home></Home>} className= "btn btn-ghost normal-case text-xl" ><img className="rounded-full mx-2" src={doctorsLogoImg} width='28px'alt="" /> Doctors Portal</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
