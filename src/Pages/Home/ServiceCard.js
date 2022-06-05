@@ -1,6 +1,6 @@
 import React from "react";
 import treatment from '../../assets/images/treatment.png';
-import './ServiceCard.css';
+// import './ServiceCard.css';
 
 const ServiceCard = () => {
   return (
