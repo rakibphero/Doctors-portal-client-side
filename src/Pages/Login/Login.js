@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useToken from "../../Hook/useToken";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-  const { register, formState: { errors }, handleSubmit, } = useForm();
+  const[sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  const { register, formState: { errors }, handleSubmit, getValues} = useForm();
   const [
     signInWithEmailAndPassword,
     user,
@@ -15,23 +17,32 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
 
+  const[token] = useToken(user || gUser)
+
   let signInError;
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
   useEffect( ()=>{
-    if (user || gUser) {
-        navigate(from, { replace: true });
+    if(token){
+      navigate(from, { replace : true });
     }
-  },[user, gUser, from, navigate])
+    // if (user || gUser) {
+    //     navigate(from, { replace: true });
+    // }
+  },[token, from, navigate]) //gUser,user
   
-  if( loading || gLoading){
+  if( loading || gLoading || sending){
       return <Loading></Loading>
   }
   if(error || gError){
     signInError= <p className="text-red-500"><small>{error?.message || gError?.message }</small></p>
   }
+
+  // if(token){
+  //   navigate(from, { replace:true });
+  // }
 
   const onSubmit = data => {
     signInWithEmailAndPassword(data.email, data.password);
@@ -92,12 +103,19 @@ const Login = () => {
               <label className="label">
               {errors.password?.type === "required" && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
               {errors.password?.type === "minLength" && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
+              <button onClick={async() =>{
+                        const email = getValues("email");
+                        await sendPasswordResetEmail(email);
+                        alert('Sent email');
+              }} className="label-text-alt link link-hover text-secondary">Forgot Password?</button>
+
               </label>
             </div>
             
             {signInError}
             <input className="btn w-full max-w-xs text-white" type="submit" value="Login"/>
           </form>
+
           <p><small>New to Doctors Portal? <Link className="text-primary" to='/signup'>Create New Account</Link> </small></p>
 
           <div className="divider">OR</div>

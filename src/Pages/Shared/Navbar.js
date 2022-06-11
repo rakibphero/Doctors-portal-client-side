@@ -2,7 +2,7 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
-import doctorsLogoImg from '../../assets/icons/DoctorLogo.jpg';
+import doctorsLogoImg from '../../assets/icons/DoctorLogo.png';
 import auth from "../../firebase.init";
 import Home from "../Home/Home";
 
@@ -49,7 +49,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to='/' element={<Home></Home>} className= "btn btn-ghost normal-case text-xl" ><img className="rounded-full mx-2" src={doctorsLogoImg} width='28px'alt="" /> Doctors Portal</Link>
+        <Link to='/' element={<Home></Home>} className= "btn btn-ghost normal-case text-xl" ><img className="rounded-full mx-2 h-28 mb-4" src={doctorsLogoImg} width='180px'alt="" /></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
