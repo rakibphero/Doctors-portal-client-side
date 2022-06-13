@@ -15,10 +15,13 @@ const Navbar = () => {
   const menuItems = (
     <>
       <li><Link to="/">Home</Link></li>
-      <li><Link to="/about">About</Link></li>
       <li><Link to="/appointment">Appointment</Link></li>
       <li><Link to="/reviews">Reviews</Link></li>
-      <li><Link to="/contactUs">Contact Us</Link></li>
+      <li><Link to="/contactUs">Contact</Link></li>
+      <li><Link to="/about">About</Link></li>
+      {
+        user && <li><Link to="/dashboard">Dashboard</Link></li>
+      }
       <li>{user ? <button className="btn btn-ghost" onClick={logout} > SignOut </button> : <Link to="/login">Login</Link>}</li>
     </>
   );
@@ -49,7 +52,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to='/' element={<Home></Home>} className= "btn btn-ghost normal-case text-xl" ><img className="rounded-full mx-2 h-28 mb-4" src={doctorsLogoImg} width='180px'alt="" /></Link>
+        <Link to='/' element={<Home></Home>} className= "btn btn-ghost normal-case text-xl" ><img className="rounded-full mx-2 h-20" src={doctorsLogoImg} width='180px'alt="" /></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
