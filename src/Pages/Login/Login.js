@@ -76,8 +76,8 @@ const Login = () => {
                   })}
               />
               <label className="label">
-              {errors.email?.type === "required" && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
-              {errors.email?.type === "pattern" && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+              {errors.email?.type === "required" && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+              {errors.email?.type === "pattern" && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
               </label>
             </div>
 
@@ -101,8 +101,8 @@ const Login = () => {
                   })}
               />
               <label className="label">
-              {errors.password?.type === "required" && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
-              {errors.password?.type === "minLength" && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
+              {errors.password?.type === "required" && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+              {errors.password?.type === "minLength" && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
               <button onClick={async() =>{
                         const email = getValues("email");
                         await sendPasswordResetEmail(email);
