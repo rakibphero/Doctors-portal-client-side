@@ -28,9 +28,6 @@ const Login = () => {
     if(token){
       navigate(from, { replace : true });
     }
-    // if (user || gUser) {
-    //     navigate(from, { replace: true });
-    // }
   },[token, from, navigate]) //gUser,user
   
   if( loading || gLoading || sending){
