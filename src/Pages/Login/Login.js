@@ -37,10 +37,6 @@ const Login = () => {
     signInError= <p className="text-red-500"><small>{error?.message || gError?.message }</small></p>
   }
 
-  // if(token){
-  //   navigate(from, { replace:true });
-  // }
-
   const onSubmit = data => {
     signInWithEmailAndPassword(data.email, data.password);
   };
