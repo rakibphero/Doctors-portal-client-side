@@ -1,6 +1,7 @@
 import React from 'react';
 
 const UserRow = ({ user }) => {
+  // console.log(user);
     // const { email } = user;
     return (
         <tr>
