@@ -5,6 +5,7 @@ import UserRow from "./UserRow";
 
 const Users = () => {
   const { data: users, isLoading } = useQuery('users', () => fetch('http://localhost:5000/user').then(res => res.json()))
+  console.log(users);
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -23,9 +24,9 @@ const Users = () => {
           </thead>
           <tbody>
             {
-                users.map(user =><UserRow>
-                key={user._id}
-                user={user}
+                users && users?.map(user =><UserRow
+                  key={user._id}
+                  user={user}>
                 </UserRow>)
             }
           </tbody>
