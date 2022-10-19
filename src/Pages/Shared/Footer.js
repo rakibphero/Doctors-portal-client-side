@@ -1,41 +1,47 @@
-import React from "react";
-import footer from "../../assets/images/footer.png";
+import React from 'react';
+import footerImg from '../../assets/images/footer.png';
 
 const Footer = () => {
-  return (
-    <footer
-      style={{
-        background: `url(${footer})`,
-        backgroundSize: 'cover',
-      }}
-      className="p-16">
-      <div className="footer">
-        <div>
-          <span className="footer-title">Services</span>
-          <a href="https://youtube.com">Branding</a>
-          <a href="https://youtube.com">Design</a>
-          <a href="https://youtube.com">Marketing</a>
-          <a href="https://youtube.com">Advertisement</a>
-        </div>
-        <div>
-          <span className="footer-title">Company</span>
-          <a href="https://youtube.com">About us</a>
-          <a href="https://youtube.com">Contact</a>
-          <a href="https://youtube.com">Jobs</a>
-          <a href="https://youtube.com">Press kit</a>
-        </div>
-        <div>
-          <span className="footer-title">Legal</span>
-          <a href="https://youtube.com">Terms of use</a>
-          <a href="https://youtube.com">Privacy policy</a>
-          <a href="https://youtube.com">Cookie policy</a>
-        </div>
-      </div>
-      <div className="text-center my-4 font-bold">
-        <p>Copyright © 2022 - All right reserved.</p>
-      </div>
-    </footer>
-  );
+
+    //display current date
+
+    var today = new Date();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+    return (
+        <footer style={{
+            backgroundImage: `url(${footerImg})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover'
+        }} className="p-10 my-28">
+
+            <div className='footer lg:mx-40'>
+                <div>
+                    <span className="footer-title text-xl">Services</span>
+                    <a href='/#' className="link link-hover">Emergency Checkup</a>
+                    <a href='/#' className="link link-hover">Monthly Checkup</a>
+                    <a href='/#' className="link link-hover">Weekly Checkup</a>
+                    <a href='/#' className="link link-hover">Deep Checkup</a>
+                </div>
+                <div>
+                    <span className="footer-title text-xl">Oral Health</span>
+                    <a href='/#' className="link link-hover">Fluoride Treatment</a>
+                    <a href='/#' className="link link-hover">Cavity Checking</a>
+                    <a href='/#' className="link link-hover">Teeth Whitening</a>
+                </div>
+                <div>
+                    <span className="footer-title text-xl">Our Address</span>
+                    <a href='/#' className="link link-hover">Dhanmondi, Lab-Aid</a>
+                </div>
+            </div>
+
+            <div className='text-center py-20 lg:py-10'>
+                <p className='font-semibold'>Copyright © {date} All rights are reserved by "LabAid - Dental Solutions"</p>
+            </div>
+
+        </footer>
+    );
+
 };
 
 export default Footer;

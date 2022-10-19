@@ -2,12 +2,11 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
-import doctorsLogoImg from "../../assets/icons/DoctorLogo.png";
 import auth from "../../firebase.init";
-import Home from "../Home/Home";
+import img from "../../assets/images/navLogo.png"
 
 const Navbar = () => {
-  const [user] = useAuthState(auth);
+  const [user, loading, error] = useAuthState(auth);
 
   const logout = () => {
     signOut(auth);
@@ -16,40 +15,21 @@ const Navbar = () => {
 
   const menuItems = (
     <>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/appointment">Appointment</Link>
-      </li>
-      <li>
-        <Link to="/reviews">Reviews</Link>
-      </li>
-      <li>
-        <Link to="/contactUs">Contact</Link>
-      </li>
-      <li>
-        <Link to="/about">About</Link>
-      </li>
-      {user && (
-        <li>
-          <Link to="/dashboard">Dashboard</Link>
-        </li>
-      )}
-      <li>
-        {user ? (
-          <button className="btn btn-ghost" onClick={logout}>
-            {" "}
-            SignOut{" "}
-          </button>
-        ) : (
-          <Link to="/login">Login</Link>
-        )}
-      </li>
+      <li><Link to="/"> <span className="font-bold text-lg text-gray-500">Home</span> </Link></li>
+      <li><Link to="/appointment"><span className="font-bold text-lg text-gray-500">Appointment</span></Link></li>
+      <li><Link to="/doctors"><span className="font-bold text-lg text-gray-500">Doctors</span></Link></li>
+      <li><Link to="/contact"><span className="font-bold text-lg text-gray-500">Contact</span></Link></li>
+      <li><Link to="/about"><span className="font-bold text-lg text-gray-500">About</span></Link></li>
+      {
+        user && <li><Link to="/dashboard"><span className="font-bold text-lg text-gray-500">Dashboard</span></Link></li>
+      }
+
     </>
   );
+
   return (
-    <div className="navbar bg-base-100">
+
+    <div className="navbar bg-base-200 px-12 py-3 mt-5">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -60,40 +40,23 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </label>
-          <ul
-            tabIndex="0"
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-          >
+          <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             {menuItems}
           </ul>
         </div>
-        <Link
-          to="/"
-          element={<Home></Home>}
-          className="btn btn-ghost normal-case text-xl"
-        >
-          <img
-            className="rounded-full mx-2 h-20"
-            src={doctorsLogoImg}
-            width="180px"
-            alt=""
-          />
-        </Link>
+        <a href="/" className="btn btn-ghost normal-case text-xl"><img className='rounded' src={img} width="90px" alt="" /></a>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0">{menuItems}</ul>
+      <div className="navbar-end hidden lg:flex">
+        <ul className="menu menu-horizontal p-0 mt-5 text-lg">
+          {menuItems}
+        </ul>
       </div>
 
       <div className="navbar-end">
-        <label tabIndex="1" htmlFor= "dashboard-sidebar" className="btn btn-ghost lg:hidden">
+        <label tabIndex="1" for="dashboard-sidebar" className="btn btn-ghost lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -101,15 +64,12 @@ const Navbar = () => {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h8m-8 6h16"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
           </svg>
         </label>
+        {user ? <button className="btn btn-ghost font-bold bg-white text-gray-500" onClick={logout} >Sign Out</button> : <Link to="/login" className="btn btn-ghost font-bold bg-white text-gray-500">Login</Link>}
       </div>
+
     </div>
   );
 };
