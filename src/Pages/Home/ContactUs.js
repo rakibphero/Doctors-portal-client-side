@@ -1,41 +1,37 @@
-import React from "react";
-import contact from "../../assets/images/appointment.png";
-import PrimaryButton from "../Shared/PrimaryButton";
+import React from 'react';
+import PrimaryButton from '../../component/PrimaryButton/PrimaryButton';
 
 const ContactUs = () => {
-  return (
-    <div
-      style={{
-        background: `url(${contact})`,
-      }}
-      className="bg-primary px-10 py-14"
-    >
-      <div className="text-center mb-14 text-white">
-        <p className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-accent to-secondary">
-          Contact Us
-        </p>
-        <h1 className="text-4xl">Stay connected with us</h1>
-      </div>
-      <div className="grid grid-cols-1 justify-items-center gap-5">
-        <input
-          type="text"
-          placeholder="Email Address"
-          className="input w-full max-w-md"
-        />
-        <input
-          type="text"
-          placeholder="Subject"
-          className="input w-full max-w-md"
-        />
-        <textarea
-          className="textarea w-full max-w-md"
-          placeholder="Your message"
-          rows={6}
-        ></textarea>
-        <PrimaryButton>Submit</PrimaryButton>
-      </div>
-    </div>
-  );
+
+    return (
+        <section className='my-28'>
+
+            <div className='bg-contact-section-backImg'>
+                <h5 className='text-base text-secondary font-bold text-center pt-10'>Contact Us</h5>
+                <h2 className='text-2xl text-center text-white'>Stay Connected With Us</h2>
+
+                <div className="hero">
+                    <div className="hero-content flex-col lg:flex-row-reverse">
+                        <div className="card flex-shrink-0 w-full max-w-sm">
+                            <div className="card-body">
+                                <div className="form-control">
+                                    <input type="text" placeholder="Email Address" className="input input-bordered" />
+                                </div>
+
+                                <input type="text" placeholder="Subject" className="input input-bordered max-w-xs w-96" />
+
+                                <textarea className="textarea textarea-bordered" placeholder="Your Message"></textarea>
+
+                                <div className="form-control mt-4 items-center">
+                                    <PrimaryButton>Submit</PrimaryButton>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default ContactUs;
