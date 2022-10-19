@@ -20,3 +20,5 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 export default auth;
+
+//firebase works id here

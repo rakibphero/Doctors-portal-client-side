@@ -1,8 +1,14 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'banner-section-backImg': "url('/src/assets/images/bg.png')",
+        'contact-section-backImg': "url('/src/assets/images/appointment.png')"
+      }
+    },
   },
+
   daisyui: {
     themes: [
       {
@@ -18,6 +24,7 @@ module.exports = {
       "cupcake",
     ],
   },
+
 
   plugins: [require("daisyui")],
 }

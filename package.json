@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.13.0",
+    "@stripe/stripe-js": "^1.42.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "daisyui": "^2.15.0",
     "date-fns": "^2.28.0",
     "firebase": "^9.8.2",
+    "jsonwebtoken": "^8.5.1",
     "react": "^18.1.0",
     "react-day-picker": "^8.0.5",
     "react-dom": "^18.1.0",
@@ -46,5 +49,17 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.0.24"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "tailwind.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakibphero/Doctors-portal-client-side.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rakibphero/Doctors-portal-client-side/issues"
+  },
+  "homepage": "https://github.com/rakibphero/Doctors-portal-client-side#readme"
 }
